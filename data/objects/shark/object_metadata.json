@@ -1,0 +1,7 @@
+{
+  "object_id": "shark",
+  "radius": 0.35,
+  "elevation_ratio": 0.25,
+  "zero123plus": {
+    "repo_dir": "external/zero123plus"}
+}

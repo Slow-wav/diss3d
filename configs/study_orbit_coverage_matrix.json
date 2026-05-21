@@ -1,0 +1,67 @@
+{
+  "matrix_id": "shark_orbit_coverage_reconstruction_study",
+  "matrix_notes": "Fixed-total-view sweep for elevation coverage at 16x scale. Each dataset uses 30 views at 768x768 and changes only the number of orbit rings.",
+  "base_config": "configs/baseline_realviews_3dgs_gaustudio_whitebg.json",
+  "output_dir": "configs/generated/orbit_coverage",
+  "baseline": {
+    "name": "orbits5_views30_768_16x",
+    "experiment_id": "shark_gs_orbits5_views30_768_16x",
+    "updates": {
+      "input_condition.real_view_transforms.use_existing_transforms": true,
+      "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/orbits5_16x_30v_768",
+      "input_condition.real_view_transforms.num_views": 30,
+      "input_condition.real_view_transforms.number_of_orbits": 5,
+      "input_condition.real_view_transforms.width": 768,
+      "input_condition.real_view_transforms.height": 768,
+      "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/orbits5_16x_30v_768"
+    },
+    "study_parameters": {
+      "view_count": 30,
+      "number_of_orbits": 5,
+      "elevation_coverage": "five_orbit",
+      "image_width": 768,
+      "image_height": 768,
+      "image_resolution": "768x768",
+      "scale": 16.0
+    }
+  },
+  "axes": [
+    {
+      "axis": "number_of_orbits",
+      "variants": [
+        {
+          "name": "orbits1",
+          "experiment_id": "shark_gs_orbits1_views30_768_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/orbits1_16x_30v_768",
+            "input_condition.real_view_transforms.num_views": 30,
+            "input_condition.real_view_transforms.number_of_orbits": 1,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/orbits1_16x_30v_768"
+          },
+          "study_parameters": {
+            "number_of_orbits": 1,
+            "elevation_coverage": "single_orbit",
+            "scale": 16.0
+          }
+        },
+        {
+          "name": "orbits3",
+          "experiment_id": "shark_gs_orbits3_views30_768_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/orbits3_16x_30v_768",
+            "input_condition.real_view_transforms.num_views": 30,
+            "input_condition.real_view_transforms.number_of_orbits": 3,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/orbits3_16x_30v_768"
+          },
+          "study_parameters": {
+            "number_of_orbits": 3,
+            "elevation_coverage": "triple_orbit",
+            "scale": 16.0
+          }
+        }
+      ]
+    }
+  ]
+}

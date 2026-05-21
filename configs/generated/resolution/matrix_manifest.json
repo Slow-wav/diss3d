@@ -1,0 +1,27 @@
+{
+  "base_config": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/baseline_realviews_3dgs_gaustudio_whitebg.json",
+  "generated_config_count": 3,
+  "generated_configs": [
+    {
+      "axis": "baseline",
+      "config_path": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/resolution/shark_gs_baseline_150v_5orbit_768_16x.json",
+      "experiment_id": "shark_gs_baseline_150v_5orbit_768_16x",
+      "variant_name": "baseline_150v_5orbit_768_16x"
+    },
+    {
+      "axis": "image_resolution",
+      "config_path": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/resolution/shark_gs_res512_150v_5orbit_16x.json",
+      "experiment_id": "shark_gs_res512_150v_5orbit_16x",
+      "variant_name": "res512"
+    },
+    {
+      "axis": "image_resolution",
+      "config_path": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/resolution/shark_gs_res256_150v_5orbit_16x.json",
+      "experiment_id": "shark_gs_res256_150v_5orbit_16x",
+      "variant_name": "res256"
+    }
+  ],
+  "matrix_id": "shark_resolution_16x_reconstruction_study",
+  "matrix_source": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/study_resolution_16x_matrix.json",
+  "output_dir": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/resolution"
+}

@@ -1,0 +1,61 @@
+{
+  "experiment_id": "shark_realviews_3dgs_gaustudio_baseline_whitebg",
+  "object_id": "shark",
+  "input_condition": {
+    "mode": "real_views",
+    "real_view_transforms": {
+      "use_existing_transforms": true,
+      "images_dir": "data/objects/shark/real_views_master_5ring",
+      "num_views": 150,
+      "number_of_orbits": 5,
+      "width": 768,
+      "height": 768,
+      "focal_length_mm": 50.0,
+      "sensor_width_mm": 36.0
+    }
+  },
+  "study_parameters": {
+    "reconstruction_model": "gaussian_splatting",
+    "view_count": 150,
+    "number_of_orbits": 5,
+    "elevation_coverage": "five_orbit",
+    "image_width": 768,
+    "image_height": 768,
+    "image_resolution": "768x768",
+    "scale": 1.0
+  },
+  "reconstruction": {
+    "backend": "gaussian_splatting",
+    "dataset_prep": {
+      "dataset_dir": "data/objects/shark/real_views_master_5ring",
+      "eval": false,
+      "test_holdout": 8,
+      "copy_images": false
+    },
+    "gaussian_splatting": {
+      "iterations": 30000,
+      "white_background": true
+    }
+  },
+  "meshing": {
+    "backend": "gaustudio",
+    "gaustudio": {
+      "load_iteration": -1,
+      "resolution": 2,
+      "sh_degree": 0,
+      "white_background": true,
+      "clean": true
+    }
+  },
+  "evaluation": {
+    "ground_truth_mesh": "data/objects/shark/ground_truth/mesh.obj",
+    "control_experiment_id": "shark_realviews_3dgs_gaustudio_baseline_whitebg",
+    "metrics": {
+      "novel_view_render": ["psnr", "ssim", "lpips"],
+      "geometry_and_mesh": ["chamfer_distance", "rmse", "hausdorff_distance", "mesh_completeness", "mesh_accuracy", "f1_score", "normal_consistency"],
+      "scale_and_alignment": ["scale_factor_error", "bbox_diagonal_ratio", "center_offset", "dimensional_accuracy"],
+      "efficiency": ["input_preparation_runtime", "reconstruction_runtime", "meshing_runtime", "total_runtime"],
+      "qualitative": ["collapse", "fragmentation", "blobs", "surface_artifacts", "scale_instability"]
+    }
+  }
+}

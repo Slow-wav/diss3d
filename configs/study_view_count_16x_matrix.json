@@ -1,0 +1,80 @@
+{
+  "matrix_id": "shark_view_count_16x_reconstruction_study",
+  "matrix_notes": "Fixed-scale and fixed-orbit sweep for total view count at 16x scale. Each dataset uses 5 orbit rings at 768x768 and changes only the total number of views.",
+  "base_config": "configs/baseline_realviews_3dgs_gaustudio_whitebg.json",
+  "output_dir": "configs/generated/view_count",
+  "baseline": {
+    "name": "baseline_150v_5orbit_768_16x",
+    "experiment_id": "shark_gs_baseline_150v_5orbit_768_16x",
+    "updates": {
+      "input_condition.real_view_transforms.use_existing_transforms": true,
+      "input_condition.real_view_transforms.images_dir": "data/objects/shark/real_views_scale16x_master_5ring",
+      "input_condition.real_view_transforms.num_views": 150,
+      "input_condition.real_view_transforms.number_of_orbits": 5,
+      "input_condition.real_view_transforms.width": 768,
+      "input_condition.real_view_transforms.height": 768,
+      "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/real_views_scale16x_master_5ring"
+    },
+    "study_parameters": {
+      "view_count": 150,
+      "number_of_orbits": 5,
+      "elevation_coverage": "five_orbit",
+      "image_width": 768,
+      "image_height": 768,
+      "image_resolution": "768x768",
+      "scale": 16.0
+    }
+  },
+  "axes": [
+    {
+      "axis": "view_count",
+      "variants": [
+        {
+          "name": "views20",
+          "experiment_id": "shark_gs_views20_5orbit_768_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/views20_16x_5ring_768",
+            "input_condition.real_view_transforms.num_views": 20,
+            "input_condition.real_view_transforms.number_of_orbits": 5,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/views20_16x_5ring_768"
+          },
+          "study_parameters": {
+            "view_count": 20,
+            "scale": 16.0
+          }
+        },
+        {
+          "name": "views50",
+          "experiment_id": "shark_gs_views50_5orbit_768_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/views50_16x_5ring_768",
+            "input_condition.real_view_transforms.num_views": 50,
+            "input_condition.real_view_transforms.number_of_orbits": 5,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/views50_16x_5ring_768"
+          },
+          "study_parameters": {
+            "view_count": 50,
+            "scale": 16.0
+          }
+        },
+        {
+          "name": "views100",
+          "experiment_id": "shark_gs_views100_5orbit_768_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/views100_16x_5ring_768",
+            "input_condition.real_view_transforms.num_views": 100,
+            "input_condition.real_view_transforms.number_of_orbits": 5,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/views100_16x_5ring_768"
+          },
+          "study_parameters": {
+            "view_count": 100,
+            "scale": 16.0
+          }
+        }
+      ]
+    }
+  ]
+}

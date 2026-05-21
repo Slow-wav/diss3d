@@ -1,0 +1,90 @@
+{
+  "study_id": "shark_orbit_coverage_16x_reconstruction_study",
+  "output_root": "data/objects/shark/study_views",
+  "sources": {
+    "master_16x_5ring": {
+      "dataset_dir": "data/objects/shark/real_views_scale16x_master_5ring",
+      "ring_names": ["neg45", "neg15", "zero", "pos15", "pos45"]
+    }
+  },
+  "variants": [
+    {
+      "name": "orbits1_16x_30v_768",
+      "source": "master_16x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 0,
+          "neg15": 0,
+          "zero": 30,
+          "pos15": 0,
+          "pos45": 0
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 30,
+        "number_of_orbits": 1,
+        "elevation_coverage": "single_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 16.0
+      }
+    },
+    {
+      "name": "orbits3_16x_30v_768",
+      "source": "master_16x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 0,
+          "neg15": 10,
+          "zero": 10,
+          "pos15": 10,
+          "pos45": 0
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 30,
+        "number_of_orbits": 3,
+        "elevation_coverage": "triple_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 16.0
+      }
+    },
+    {
+      "name": "orbits5_16x_30v_768",
+      "source": "master_16x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 6,
+          "neg15": 6,
+          "zero": 6,
+          "pos15": 6,
+          "pos45": 6
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 30,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 16.0
+      }
+    }
+  ]
+}

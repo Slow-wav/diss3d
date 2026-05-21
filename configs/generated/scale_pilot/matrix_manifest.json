@@ -1,0 +1,27 @@
+{
+  "base_config": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/baseline_realviews_3dgs_gaustudio_whitebg.json",
+  "generated_config_count": 3,
+  "generated_configs": [
+    {
+      "axis": "baseline",
+      "config_path": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/scale_pilot/shark_gs_scale1x_150v_5orbit_768.json",
+      "experiment_id": "shark_gs_scale1x_150v_5orbit_768",
+      "variant_name": "scale1x_150v_5orbit_768"
+    },
+    {
+      "axis": "scale",
+      "config_path": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/scale_pilot/shark_gs_scale8x_150v_5orbit_768.json",
+      "experiment_id": "shark_gs_scale8x_150v_5orbit_768",
+      "variant_name": "scale8x"
+    },
+    {
+      "axis": "scale",
+      "config_path": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/scale_pilot/shark_gs_scale16x_150v_5orbit_768.json",
+      "experiment_id": "shark_gs_scale16x_150v_5orbit_768",
+      "variant_name": "scale16x"
+    }
+  ],
+  "matrix_id": "shark_scale_pilot_reconstruction_study",
+  "matrix_source": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/study_scale_pilot_matrix.json",
+  "output_dir": "/Users/vijayjoshi/code/Coursework/updated coursework/diss3d/configs/generated/scale_pilot"
+}

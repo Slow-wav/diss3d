@@ -1,0 +1,69 @@
+{
+  "matrix_id": "shark_resolution_16x_reconstruction_study",
+  "matrix_notes": "Fixed-scale and fixed-coverage sweep for image resolution at 16x scale. Each dataset uses 150 views across 5 orbit rings and changes only image resolution.",
+  "base_config": "configs/baseline_realviews_3dgs_gaustudio_whitebg.json",
+  "output_dir": "configs/generated/resolution",
+  "baseline": {
+    "name": "baseline_150v_5orbit_768_16x",
+    "experiment_id": "shark_gs_baseline_150v_5orbit_768_16x",
+    "updates": {
+      "input_condition.real_view_transforms.use_existing_transforms": true,
+      "input_condition.real_view_transforms.images_dir": "data/objects/shark/real_views_scale16x_master_5ring",
+      "input_condition.real_view_transforms.num_views": 150,
+      "input_condition.real_view_transforms.number_of_orbits": 5,
+      "input_condition.real_view_transforms.width": 768,
+      "input_condition.real_view_transforms.height": 768,
+      "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/real_views_scale16x_master_5ring"
+    },
+    "study_parameters": {
+      "view_count": 150,
+      "number_of_orbits": 5,
+      "elevation_coverage": "five_orbit",
+      "image_width": 768,
+      "image_height": 768,
+      "image_resolution": "768x768",
+      "scale": 16.0
+    }
+  },
+  "axes": [
+    {
+      "axis": "image_resolution",
+      "variants": [
+        {
+          "name": "res512",
+          "experiment_id": "shark_gs_res512_150v_5orbit_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/res512_16x_5ring_150v",
+            "input_condition.real_view_transforms.width": 512,
+            "input_condition.real_view_transforms.height": 512,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/res512_16x_5ring_150v"
+          },
+          "study_parameters": {
+            "image_width": 512,
+            "image_height": 512,
+            "image_resolution": "512x512",
+            "scale": 16.0
+          }
+        },
+        {
+          "name": "res256",
+          "experiment_id": "shark_gs_res256_150v_5orbit_16x",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/study_views/res256_16x_5ring_150v",
+            "input_condition.real_view_transforms.width": 256,
+            "input_condition.real_view_transforms.height": 256,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/study_views/res256_16x_5ring_150v"
+          },
+          "study_parameters": {
+            "image_width": 256,
+            "image_height": 256,
+            "image_resolution": "256x256",
+            "scale": 16.0
+          }
+        }
+      ]
+    }
+  ]
+}

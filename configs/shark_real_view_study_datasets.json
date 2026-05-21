@@ -1,0 +1,246 @@
+{
+  "study_id": "shark_real_view_reconstruction_study",
+  "output_root": "data/objects/shark/study_views",
+  "sources": {
+    "master_1x_5ring": {
+      "dataset_dir": "data/objects/shark/real_views_master_5ring",
+      "ring_names": ["neg45", "neg15", "zero", "pos15", "pos45"]
+    }
+  },
+  "variants": [
+    {
+      "name": "baseline_1x_5ring_150v_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 30,
+          "neg15": 30,
+          "zero": 30,
+          "pos15": 30,
+          "pos45": 30
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 150,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "views20_1x_5ring_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 4,
+          "neg15": 4,
+          "zero": 4,
+          "pos15": 4,
+          "pos45": 4
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 20,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "views50_1x_5ring_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 10,
+          "neg15": 10,
+          "zero": 10,
+          "pos15": 10,
+          "pos45": 10
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 50,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "views100_1x_5ring_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 20,
+          "neg15": 20,
+          "zero": 20,
+          "pos15": 20,
+          "pos45": 20
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 100,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "orbits1_1x_30v_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 0,
+          "neg15": 0,
+          "zero": 30,
+          "pos15": 0,
+          "pos45": 0
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 30,
+        "number_of_orbits": 1,
+        "elevation_coverage": "single_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "orbits3_1x_30v_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 0,
+          "neg15": 10,
+          "zero": 10,
+          "pos15": 10,
+          "pos45": 0
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 30,
+        "number_of_orbits": 3,
+        "elevation_coverage": "triple_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "orbits5_1x_30v_768",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 6,
+          "neg15": 6,
+          "zero": 6,
+          "pos15": 6,
+          "pos45": 6
+        }
+      },
+      "resize": {
+        "width": 768,
+        "height": 768
+      },
+      "study_parameters": {
+        "view_count": 30,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 768,
+        "image_height": 768,
+        "image_resolution": "768x768",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "res512_1x_5ring_150v",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 30,
+          "neg15": 30,
+          "zero": 30,
+          "pos15": 30,
+          "pos45": 30
+        }
+      },
+      "resize": {
+        "width": 512,
+        "height": 512
+      },
+      "study_parameters": {
+        "view_count": 150,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 512,
+        "image_height": 512,
+        "image_resolution": "512x512",
+        "scale": 1.0
+      }
+    },
+    {
+      "name": "res256_1x_5ring_150v",
+      "source": "master_1x_5ring",
+      "selection": {
+        "counts_per_ring": {
+          "neg45": 30,
+          "neg15": 30,
+          "zero": 30,
+          "pos15": 30,
+          "pos45": 30
+        }
+      },
+      "resize": {
+        "width": 256,
+        "height": 256
+      },
+      "study_parameters": {
+        "view_count": 150,
+        "number_of_orbits": 5,
+        "elevation_coverage": "five_orbit",
+        "image_width": 256,
+        "image_height": 256,
+        "image_resolution": "256x256",
+        "scale": 1.0
+      }
+    }
+  ]
+}

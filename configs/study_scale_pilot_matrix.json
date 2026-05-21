@@ -1,0 +1,63 @@
+{
+  "matrix_id": "shark_scale_pilot_reconstruction_study",
+  "matrix_notes": "Baseline scale pilot for the dissertation workflow. All variants reuse the same 150-view 5-ring images at 768x768 and vary only scene scale through camera-translation scaling in transforms.json.",
+  "base_config": "configs/baseline_realviews_3dgs_gaustudio_whitebg.json",
+  "output_dir": "configs/generated/scale_pilot",
+  "baseline": {
+    "name": "scale1x_150v_5orbit_768",
+    "experiment_id": "shark_gs_scale1x_150v_5orbit_768",
+    "updates": {
+      "input_condition.real_view_transforms.use_existing_transforms": true,
+      "input_condition.real_view_transforms.images_dir": "data/objects/shark/real_views_master_5ring",
+      "input_condition.real_view_transforms.num_views": 150,
+      "input_condition.real_view_transforms.number_of_orbits": 5,
+      "input_condition.real_view_transforms.width": 768,
+      "input_condition.real_view_transforms.height": 768,
+      "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/real_views_master_5ring"
+    },
+    "study_parameters": {
+      "view_count": 150,
+      "number_of_orbits": 5,
+      "elevation_coverage": "five_orbit",
+      "image_width": 768,
+      "image_height": 768,
+      "image_resolution": "768x768",
+      "scale": 1.0
+    }
+  },
+  "axes": [
+    {
+      "axis": "scale",
+      "variants": [
+        {
+          "name": "scale8x",
+          "experiment_id": "shark_gs_scale8x_150v_5orbit_768",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/real_views_scale8x_master_5ring",
+            "input_condition.real_view_transforms.num_views": 150,
+            "input_condition.real_view_transforms.number_of_orbits": 5,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/real_views_scale8x_master_5ring"
+          },
+          "study_parameters": {
+            "scale": 8.0
+          }
+        },
+        {
+          "name": "scale16x",
+          "experiment_id": "shark_gs_scale16x_150v_5orbit_768",
+          "updates": {
+            "input_condition.real_view_transforms.use_existing_transforms": true,
+            "input_condition.real_view_transforms.images_dir": "data/objects/shark/real_views_scale16x_master_5ring",
+            "input_condition.real_view_transforms.num_views": 150,
+            "input_condition.real_view_transforms.number_of_orbits": 5,
+            "reconstruction.dataset_prep.dataset_dir": "data/objects/shark/real_views_scale16x_master_5ring"
+          },
+          "study_parameters": {
+            "scale": 16.0
+          }
+        }
+      ]
+    }
+  ]
+}

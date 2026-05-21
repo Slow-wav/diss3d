@@ -1,0 +1,91 @@
+{
+  "evaluation": {
+    "control_experiment_id": "shark_gs_baseline_150v_5orbit_768_16x",
+    "ground_truth_mesh": "data/objects/shark/ground_truth/mesh.obj",
+    "metrics": {
+      "efficiency": [
+        "input_preparation_runtime",
+        "reconstruction_runtime",
+        "meshing_runtime",
+        "total_runtime"
+      ],
+      "geometry_and_mesh": [
+        "chamfer_distance",
+        "rmse",
+        "hausdorff_distance",
+        "mesh_completeness",
+        "mesh_accuracy",
+        "f1_score",
+        "normal_consistency"
+      ],
+      "novel_view_render": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "qualitative": [
+        "collapse",
+        "fragmentation",
+        "blobs",
+        "surface_artifacts",
+        "scale_instability"
+      ],
+      "scale_and_alignment": [
+        "scale_factor_error",
+        "bbox_diagonal_ratio",
+        "center_offset",
+        "dimensional_accuracy"
+      ]
+    }
+  },
+  "experiment_id": "shark_gs_views100_5orbit_768_16x",
+  "input_condition": {
+    "mode": "real_views",
+    "real_view_transforms": {
+      "focal_length_mm": 50.0,
+      "height": 768,
+      "images_dir": "data/objects/shark/study_views/views100_16x_5ring_768",
+      "num_views": 100,
+      "number_of_orbits": 5,
+      "sensor_width_mm": 36.0,
+      "use_existing_transforms": true,
+      "width": 768
+    }
+  },
+  "meshing": {
+    "backend": "gaustudio",
+    "gaustudio": {
+      "clean": true,
+      "load_iteration": -1,
+      "resolution": 2,
+      "sh_degree": 0,
+      "white_background": true
+    }
+  },
+  "object_id": "shark",
+  "reconstruction": {
+    "backend": "gaussian_splatting",
+    "dataset_prep": {
+      "copy_images": false,
+      "dataset_dir": "data/objects/shark/study_views/views100_16x_5ring_768",
+      "eval": false,
+      "test_holdout": 8
+    },
+    "gaussian_splatting": {
+      "iterations": 30000,
+      "white_background": true
+    }
+  },
+  "study_parameters": {
+    "elevation_coverage": "five_orbit",
+    "image_height": 768,
+    "image_resolution": "768x768",
+    "image_width": 768,
+    "matrix_axis": "view_count",
+    "matrix_variant": "views100",
+    "number_of_orbits": 5,
+    "reconstruction_model": "gaussian_splatting",
+    "scale": 16.0,
+    "view_count": 100
+  }
+}

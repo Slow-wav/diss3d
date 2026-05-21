@@ -1,0 +1,10 @@
+# Runtime dependencies for the dissertation scaffold.
+# The mock pipeline mostly uses the Python standard library, but the
+# real-view/generation helper scripts also rely on lightweight utilities
+# for image splitting and transform handling.
+# Keep new Python dependencies listed here so other users can install
+# everything with: pip install -r requirements.txt
+
+numpy
+Pillow
+plyfile
